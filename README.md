@@ -1,1 +1,0 @@
-# thedax-ile-hack-ad-mlari

@@ -1,0 +1,98 @@
+Merhaba arkadaşlar ,
+
+çoğu arkadaşımızın bir çok tekniği bildiği halde hack yapamadığını görüyorum.Öncellikle konumuza geçmeden önce birkaç küçük birşey söylemek istiyorum.
+
+1- Anlattıklarımı "TÜRK" sitelerine denemeyiniz , sorumluluk kabul etmiyorum.
+2- Bildiklerimi , tecrübe ettiklerimi anlatacağım , yok efendim bu aşama böyle olmaz öyle olur demeyin lütfen.
+3- Eğer ki bu işe girdiyseniz "LİNUX" işletim sistemininizin olması gerekli!
+
+Evet şimdi konumuza geri dönelim.İlk bende başladığımda inanın biliyordum ama yapamıyordum , bunu şöyle düşünebilirsiniz;
+Arabanın herşeyini biliyorsunuz fakat iş sürmeye gelince zorlanıyorsunuz olmuyor... Arkadaşlar tüm konularda geçerlidir bu derslerde bile başarılı olmak için zaman ve çalışmak gerekiyor.Şimdi benim yaptığım aşamaları
+size göstermek istiyorum ; 
+
+
+1 - Bilgi Toplama Aşaması 
+-------------------------------------
+Arkadaşlar bunu herkesin ağzından duyarsınız ne bilgiymiş arkadaş diyebilirsiniz.Bakış açınızı şöyle yapın ; Çok basit örnek ile birisi ile arkadaş olmak veya sevgili olmak için ilk önce onu tanımanız , hakkında bilgi edinmeniz gerekli.Bu hırsız mı ? , katil mi ? diye bir öğrenmek gerek dimi ?.
+
+2 - Sitede Açık Arama
+-------------------------------------
+Evet arkadaşlar şimdi ise siteden bilgileri topladık ve bir yere "NOT" aldık.sitede açık arama nasıl olucak peki ?.Aşamaları vereyim hemen ; 
+
+Port Taraması
+-------------------------------------
+Bir web sitemiz var ve bu web sitesinde port taraması yapmazsak olmaz.Neden olmaz diyebilirsiniz , şöyle ki websitemiz de portlar açık olması gerekli yoksa bu web sitesi çalışmaz.
+Yönetici olan abilerimiz bazen portlarını güncellemiyorlar ve eski versiyon portlar oluyor veya kapatmayı unutuyorlar örnek verelim hemen ; 
+port : 21 - pure-ftpd
+
+Subdomain (Alt alan adı) Taraması
+-------------------------------------
+test.com diye bir sitemiz var diyelim, herşeyi denedik açık bulamadık.O halde hemen alt alan adlarına bakıyoruz örnek ;
+support.test.com , contact.test.com , buradan da ilerleyebiliriz unutmayın subdomainleri karıştırmak bizim için önemlidir.Deneme amaçlı bir alan adı açtı ise oradan da yürütebiliriz işi :).
+
+Siteyi gezin
+-------------------------------------
+Şimdi ise yapıcağımız şey siteyi gezinmektir.He bu arada bunları sıralı vermedim yani ilk siteyi gezinip sonra diğer adımlarıda yapabilirsiniz.Sitede geziniyoruz örnek vericek olursak ; 
+search yerine "javascript" kodlarımızı yazarak xss var mı ? bakabiliriz veya sql açığı varmı diye bütün heryere tıklayıp utanılara bakabiliriz.Burası sizin hayal gücünüze kalmış birşeydir çünkü hangi açıkları biliyorsanız onun üstünden gitmeniz gerekmektedir.
+
+Not : Bazı açıkları , tooları yazı sonunda vericeğim.
+------------------------------------------------------
+
+Arkadaşlar şimdi geldik önemli bir yere.Sitemizin dizinlerini aramamız gerek , bakın bu da bilgi toplama aşamasına giriyor.Dizinlerden sitenin admin panelini bulduk diyelim ve sitemiz çok yaygın olan wordpress sitesi olsun.
+
+test.com/wp-admin, ben burda ilk önce wordpress sürümünü öğrenirdim.Nasıl mı öğrenicez ? , sayfanın kaynak kodundan veya yazı sonunda yazıcağım tool ile öğrenebilirsiniz.Eski sürümü kullanıyor diyelim hemen google amcaya diyoruz bize zafiyetleri sunucaktır.Tavsiye ettiğim site "exploit-db".Eğer ki sürüm yüksek diyelim burda devreye "WPSCAN , HYDRA" toolarımızı araya sokabiliriz.Örnek verelim hemen ;
+Plugin(Eklenti) eski eklenti kullanabilirler veya açığı olan bir eklenti kullanabilirler burdanda hackleyebiliriz veya panele brute force deneyebiliriz.(Tooların kullanımı malesef anlatmayacağım sadece size taktikler veriyorum kendiniz öğremeniz daha iyi olacaktır)
+
+3 - Açık Türleri
+-------------------------------------
+Sql,Upload,Xss,LFI-RFI bilinen eski tur açıklardır bunlar nasıl kullanılır öğrenmeniz gerekmektedir."BUNLARIN BYPASS EDİLMESİNİ DE ÖĞRENİNİZ." Örnek verelim hemen;
+Siteye shell yüklüyeceksiniz ama .php uzantısını kabul etmiyor fotoğrafın içine gömebilirsiniz veya burp suite bypass edebilirsiniz.Burp suite'de kullanmasını bilmeniz gerekmektedir!
+
+Pes etmek yok
+-------------------------------------
+Sunucu dediğimiz bir sistem vardır siteleri barındırmak için.Bakın "siteleri" dedim bir sunucu 1'den fazla site barındırır.Örnek ; test.com adında sitemiz var ve biz herşeyi denedik ama hackleyemedik pes mi ediyoruz ? tabiki hayır! pes etme sırası daha gelmedi...Hemen koşuyoruz o bulduğumuz sitelere girip onlarda açık arıyoruz ve aynı işlemleri uyguluyoruz.Baktık hiçbiri olmuyor mu?.Paşa paşa çekilip "Siteyi kim yaptıysa helal olsun!" diyip bırakıyoruz.
+
+Şimdi diceksin ki ee sen hack yapmayı öğretcektin biz yine bıraktık ?.Çoğu sağlam hackerlar vardır ki yapamazlar bizlerden ne kadar iyi olsalar bile bazen olmazsa olmaz bu işlemleri deneyince illaki başarılı olucaksınız.
+
+Son olarak şunu da demeyelim ; Bakış açınızı değiştirin acaba böyle yapsam olur mu ? , şunu eklesem olur mu ? diyin.Düşünün uygulayın yapın sürekli deneme yapmanız gerekmeli çünkü birilerinden duyup bilgi edinmek ile  deneyip , uğraşıp öyle başarılı olmak arasında çok fark vardır.
+
+-------------------------------------
+
+TOOL'S
+--------
+1 - Nmap (Port taramak için)
+2 - Wpscan (Wordpress siteler için)
+3 - Joomscan (Joomla siteleri için)
+4 - Hydra (Birçok işlem için kullanılır ; Service BruteForce)
+5 - Nikto (Bilgi toplama aracı)
+6 - Dnsenum (Dns adreslerine bakmak için)
+7 - Owasp (Otomatik açık arama aracı)
+8 - Sqlmap (Sql açıkları sömürmek için)
+9 - Msfconsole (Exploitleri kullanmak için)
+10 - Dirb - Wfuzz (Dizin taramaları için)
+11 - Xsscaner (XSS açıklarını sömürmek için)
+12 - Burp Suite (Gelen giden istekleri görmemizi, brute force gibi birçok şey yapmamıza olanak sağlar)
+
+BİLMENİZ GEREKENLER 
+-------------------
+1 - Network 
+2 - Sistem Bilgisi (LİNUX , WİNDOWS)
+3 - Temel hack kavramları
+4 - En az 1 tane program dili!
+5 - Açık türleri
+6 - Son olarakta kendi düşüncem olan shell'in kavramını , nasıl yüklenir ? ,kullanılır ? onu bilmenizdir.
+
+NASIL ÇALIŞIRIM ?
+------------------
+Önerim CTF çözmenizdir google amcaya vulnhub yazarak bulabilirsiniz , youtube'da ctf nedir ? nasıl kurulur ? yazabilirsiniz.
+
+Ben yinede kısaca ctf nedir diyeyim ; CTF içinde bilerek açıklar barından sanal bir sistemdir.Burada bunları sömürerek kendimizi geliştiririz.
+
+Bol bol araştırmanız gerekmektedir.Google amca sizin hayat kaynağınız olmalıdır.
+
+Sürekli okuyun yeni şeyleri öğrenin , yeni açıkları öğrenin nasıl yapılır öğrenin.
+
+-----------------------------------------------------------------------------------
+
+Evet , aklıma gelenleri yazdım , kısa tutmak istedim bir eksiğim bir hatam olduysa affola kendinize iyi bakın.
+
